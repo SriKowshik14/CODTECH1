@@ -1,9 +1,10 @@
-**NAME:** PARVATHALA SRI KOWSHIK
-**COMPANY:** CODTECH IT SOLUTIONS PRIVATE LIMITED
-**INTERN ID:** CIS255
-**DOMAIN:** EMBEDDED SYSTEMS
-**DURATION:** 6 WEEKS
-**INTERNSHIP PERIOD:** 12TH NOVEMBER 2026 TO 24TH DECEMBER 2026
+- **NAME:** PARVATHALA SRI KOWSHIK
+- **COMPANY:** CODTECH IT SOLUTIONS PRIVATE LIMITED
+- **INTERN ID:** CIS255
+- **DOMAIN:** EMBEDDED SYSTEMS
+- **DURATION:** 6 WEEKS
+- **INTERNSHIP PERIOD:** 12TH NOVEMBER 2026 TO 24TH DECEMBER 2026
+- **MENTOR:** NEELA SANTHOSH KUMAR
 
 Project Overview
 This project simulates a traffic light controller in a web browser using HTML, CSS, and JavaScript. The lights automatically cycle through green, yellow, and red, with a text message showing the current signal.
