@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Traffic Light</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f2f2f2;
+    }
+
+    .traffic-light {
+      width: 120px;
+      margin: 30px auto;
+      padding: 15px;
+      background: #222;
+      border-radius: 20px;
+    }
+
+    .light {
+      width: 80px;
+      height: 80px;
+      margin: 12px auto;
+      border-radius: 50%;
+      background: #444;
+    }
+
+    .red.on    { background: #ff2020; }
+    .yellow.on { background: #ffd21f; }
+    .green.on  { background: #20d050; }
+
+    #status {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Smart Traffic Light Controller</h1>
+
+  <div class="traffic-light" aria-label="Traffic light">
+    <div id="red" class="light red"></div>
+    <div id="yellow" class="light yellow"></div>
+    <div id="green" class="light green"></div>
+  </div>
+
+  <p id="status">Starting...</p>
+
+  <script>
+    const redLight = document.getElementById("red");
+    const yellowLight = document.getElementById("yellow");
+    const greenLight = document.getElementById("green");
+    const statusText = document.getElementById("status");
+
+    const sequence = [
+      { color: "green",  duration: 5000, message: "GO — Green light" },
+      { color: "yellow", duration: 2000, message: "SLOW — Yellow light" },
+      { color: "red",    duration: 5000, message: "STOP — Red light" }
+    ];
+
+    let step = 0;
+
+    function showLight(color, message) {
+      redLight.classList.toggle("on", color === "red");
+      yellowLight.classList.toggle("on", color === "yellow");
+      greenLight.classList.toggle("on", color === "green");
+      statusText.textContent = message;
+    }
+
+    function runSequence() {
+      const current = sequence[step];
+      showLight(current.color, current.message);
+
+      step = (step + 1) % sequence.length;
+      setTimeout(runSequence, current.duration);
+    }
+
+    runSequence();
+  </script>
+</body>
+</html>
